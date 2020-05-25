@@ -43,7 +43,11 @@ namespace ParamaterDemo
             Console.WriteLine("\nTestMultiple set just first and third");
             TestMultiple(1, cValue: 3);
 
-
+            //Overloaded methods
+            Console.WriteLine("\nTest overloaded method with a string");
+            TestOverloaded("Test with string");
+            Console.WriteLine("\nTest overloaded method with a string");
+            TestOverloaded(5, 5.5);
         }
 
         public static void Test(int aValue)
@@ -79,5 +83,16 @@ namespace ParamaterDemo
         {
             Console.WriteLine("Inside TestMultipe -" + "Values: " + "{0}, {1}, {2}, {3}", aValue, bValue, cValue);
         }
+
+        public static void TestOverloaded(string strParam)
+        {
+            Console.WriteLine("String overload called with a value of {0}", strParam);
+        }
+
+        public static void TestOverloaded(int intParam, double dblParam)
+        {
+            Console.WriteLine("Numeric overload called with a value of {0} and {1}", intParam, dblParam);
+        }
+
     }
 }
