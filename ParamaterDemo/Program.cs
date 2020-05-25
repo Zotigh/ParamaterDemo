@@ -12,14 +12,14 @@ namespace ParamaterDemo
             Test(testVal1);
             Console.WriteLine("Return value: {0}", testVal1);
 
-            // Pass in a reference value
+            //Pass in a reference value
             Console.WriteLine("/nPass in a reference type test:");
             int[] testArray = { 1, 1, 1 };
             Console.WriteLine("Original value : {0}", testArray[0]);
             TestArray(testArray);
             Console.WriteLine("Returned value: {0}", testArray[0]);
 
-            // Out parameter test
+            //Out parameter test
             int testVal2 = 2;
             Console.WriteLine("Original value : {0}", testVal2);
             TestOut(out testVal2);
@@ -27,9 +27,14 @@ namespace ParamaterDemo
 
             //Ref parameter test
             int testVal3 = 3;
-            Console.WriteLine("Original value: {0}", testVal3);
+            //Console.WriteLine("Original value: {0}", testVal3);
             TestRef(ref testVal3);
             Console.WriteLine("Return value: {0}", testVal3);
+
+            //Optional parameter test
+            Console.WriteLine("/nCalling TestOptional with a parameter");
+            TestOptional();
+
         }
 
         public static void Test(int aValue)
@@ -54,6 +59,16 @@ namespace ParamaterDemo
         {
             aValue = 333;
             Console.WriteLine("In TestRef Value is {0}", aValue);
+        }
+
+        public static void TestOptional(int aValue = 444)
+        {
+            Console.WriteLine("In TestOptional Value is {0}", aValue);
+        }
+
+        public static void TestMultiple(int aValue)
+        {
+
         }
     }
 }
