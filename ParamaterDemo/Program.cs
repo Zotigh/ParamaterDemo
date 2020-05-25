@@ -21,6 +21,15 @@ namespace ParamaterDemo
 
             // Out parameter test
             int testVal2 = 2;
+            Console.WriteLine("Original value : {0}", testVal2);
+            TestOut(out testVal2);
+            Console.WriteLine("Return value: {0}", testVal2);
+
+            //Ref parameter test
+            int testVal3 = 3;
+            Console.WriteLine("Original value: {0}", testVal3);
+            TestRef(ref testVal3);
+            Console.WriteLine("Return value: {0}", testVal3);
         }
 
         public static void Test(int aValue)
@@ -39,6 +48,12 @@ namespace ParamaterDemo
         {
             aValue = 222;
             Console.WriteLine("In TestOut Value is {0}", aValue);
+        }
+
+        public static void TestRef(ref int aValue)
+        {
+            aValue = 333;
+            Console.WriteLine("In TestRef Value is {0}", aValue);
         }
     }
 }
