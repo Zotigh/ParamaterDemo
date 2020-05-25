@@ -12,7 +12,15 @@ namespace ParamaterDemo
             Test(testVal1);
             Console.WriteLine("Return value: {0}", testVal1);
 
-            // 
+            // Pass in a reference value
+            Console.WriteLine("/nPass in a reference type test:");
+            int[] testArray = { 1, 1, 1 };
+            Console.WriteLine("Original value : {0}", testArray[0]);
+            TestArray(testArray);
+            Console.WriteLine("Returned value: {0}", testArray[0]);
+
+            // Out parameter test
+            int testVal2 = 2;
         }
 
         public static void Test(int aValue)
@@ -27,5 +35,10 @@ namespace ParamaterDemo
             Console.WriteLine("In test value is {0}", anArray[0]);
         }
 
+        public static void TestOut(out int aValue)
+        {
+            aValue = 222;
+            Console.WriteLine("In TestOut Value is {0}", aValue);
+        }
     }
 }
