@@ -20,8 +20,8 @@ namespace ParamaterDemo
             Console.WriteLine("Returned value: {0}", testArray[0]);
 
             //Out parameter test
-            int testVal2 = 2;
-            Console.WriteLine("Original value : {0}", testVal2);
+            int testVal2;
+            //Console.WriteLine("Original value : {0}", testVal2);
             TestOut(out testVal2);
             Console.WriteLine("Return value: {0}", testVal2);
 
@@ -32,8 +32,17 @@ namespace ParamaterDemo
             Console.WriteLine("Return value: {0}", testVal3);
 
             //Optional parameter test
-            Console.WriteLine("/nCalling TestOptional with a parameter");
+            Console.WriteLine("\nCalling TestOptional with a parameter");
             TestOptional();
+
+            //Multiple parameters
+            Console.WriteLine("\nTestMultiple set just first 2");
+            TestMultiple(1, 2);
+
+            //Named parameters
+            Console.WriteLine("\nTestMultiple set just first and third");
+            TestMultiple(1, cValue: 3);
+
 
         }
 
@@ -66,9 +75,9 @@ namespace ParamaterDemo
             Console.WriteLine("In TestOptional Value is {0}", aValue);
         }
 
-        public static void TestMultiple(int aValue)
+        public static void TestMultiple(int aValue, int bValue = 222, int cValue = 333)
         {
-
+            Console.WriteLine("Inside TestMultipe -" + "Values: " + "{0}, {1}, {2}, {3}", aValue, bValue, cValue);
         }
     }
 }
